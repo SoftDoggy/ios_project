@@ -20,7 +20,7 @@
 #import "YALNavigationBar.h"
 
 static NSString *const menuCellIdentifier = @"rotationCell";
-int choice=0;
+//int choice=0;
 imgClss imageClass=NONE;
 bool first;
 //static imgClss imageClass;//图片类别，在imgClss中取
@@ -477,8 +477,6 @@ YALContextMenuTableViewDelegate
         fy = fx;
         res=[[FaceARDetectIOS alloc] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
         rows = res.rows/2;
-//        x = res.at<double>(17);
-//        y = res.at<double>(17+rows);
         double eyebrowLeftX=res.at<double>(17);
         double eyebrowLeftY=res.at<double>(17+rows);
         double eyebrowRightX=res.at<double>(26);
@@ -523,7 +521,7 @@ YALContextMenuTableViewDelegate
         }
         if(imageClass&BEARD){
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                _Beard.frame=CGRectMake(x*1.6-30+width/4,y*1.7-60+height*4, width*3/2, height*2);
+                _Beard.frame=CGRectMake(x*1.6-30+width/4,y*1.7-60+height*3, width*3/2, height*2);
             }];
         }else{
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -592,7 +590,8 @@ YALContextMenuTableViewDelegate
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 _Hat.frame=CGRectMake(0,0, 0, 0);
             }];
-        }if(imageClass&BIGMOUTH&&mouthHeight>=10){
+        }
+        if(imageClass&BIGMOUTH&&mouthHeight>=10){
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 _BigMouth.frame=CGRectMake(x*1.6-30+width/2,res.at<double>(49+rows)*1.7-50-mouthHeight/2, width, mouthHeight*1.7);
             }];
