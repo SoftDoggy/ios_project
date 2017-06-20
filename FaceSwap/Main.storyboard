@@ -495,7 +495,7 @@
         <scene sceneID="FJn-8e-sE4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PfO-ST-xHX" userLabel="make up" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="add picture" image="ic_add_pic" id="MPY-Xb-gkn" userLabel="make up"/>
+                    <tabBarItem key="tabBarItem" title="Make Up" image="ic_add_pic" id="MPY-Xb-gkn" userLabel="make up"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kKl-kT-x1h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
